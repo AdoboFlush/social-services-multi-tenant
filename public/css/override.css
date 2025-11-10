@@ -1,0 +1,94 @@
+.fullscreen-modal {	
+  width: 80% !important;
+  max-width: 80% !important;
+  margin: 0;
+  padding: 0;
+}
+
+.fullscreen-modal > .modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.fullscreen-modal > .modal-content .modal-body {
+    padding-top: 10px;
+	overflow-y: visible !important;
+	max-height:100% !important; 
+}
+
+.tips-container ol li{
+	font-size: 0.9rem;
+}
+
+.kyc-guidlines, .kyc-form-label{
+  color: #949ba2;
+}
+.kyc-guidlines ul {
+  padding-inline-start: 20px;
+}
+.kyc-guidlines .title, .kyc-guidlines .desc {
+  display: block;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.kyc-guidlines .desc {
+  display: block;
+  margin-bottom: 20px;
+}
+.kyc-form-label {
+  margin-bottom: 20px;
+}
+.kyc-form-label .title, .kyc-form-label .desc {
+  display: block
+}
+.kyc-form-label .title {
+  font-weight: 700;
+}
+
+.custom-dropdown {
+  width: calc(100% - 35px);
+}
+
+#heading[data-toggle="collapse"].collapsed .dropdown-toggle:after {
+  border-top: 0;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0.3em solid;
+  border-left: 0.3em solid transparent;
+}
+
+#rates-history_filter {
+    display: none;
+}
+
+.lg-modal.modal-dialog{
+    width: 80%;
+    min-width: 1200px;
+}
+
+.overflow-visible {
+    overflow: visible !important;
+}
+
+.text-break-all {
+    word-break: break-all;
+}
+
+.sb-btn-icon.active {
+    background-color: #ffb3b3 !important;
+}
+
+.sb-btn-icon.active svg{
+    color: #FFF !important;
+}
+
+.bell-notif {
+   position: relative;
+}
+
+.bell-notif .badge {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  font-size: 0.55rem;
+}

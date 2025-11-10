@@ -1,0 +1,42 @@
+image: php:7.4-fpm
+
+# Pick zero or more services to be used on all builds.
+# Only needed when using a docker container to run your tests in.
+# Check out: http://docs.gitlab.com/ee/ci/docker/using_docker_images.html#what-is-a-service
+# services:
+
+cache:
+  paths:
+    - vendor/
+
+stages:
+  - build
+  - test
+
+before_script:
+  # Update packages
+  - cp .env.test .env
+  - apt update -yqq
+  - apt-get install -y git nodejs libcurl4-gnutls-dev libicu-dev libmcrypt-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libpq-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev libzip-dev mariadb-server mariadb-client default-libmysqlclient-dev -yqq
+  - docker-php-ext-install gd zip mysqli pdo pdo_mysql
+  - curl -sS https://getcomposer.org/installer | php
+  - php composer.phar update --with-all-dependencies
+  - php composer.phar install
+
+atrisan-config:
+  stage: build
+  script:
+    - php artisan key:generate
+    - php artisan config:cache
+    - php artisan migrate:fresh
+    - php artisan db:seed
+
+# linter:
+#   stage: test
+#   script:
+#     - ./vendor/bin/phpcs --no-colors --no-cache --ignore-annotations
+
+unit-tests:
+  stage: test
+  script:
+    - php vendor/bin/phpunit --coverage-text --colors=never

@@ -1,0 +1,182 @@
+body.dark {
+  background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+  background-attachment: fixed;
+}
+
+body.dark::before {
+  background:none;
+}
+
+.dark .card-header,
+.dark .card:not([class*=bg-]) .card-header {
+  background: rgba(0,0,0,.2)
+}
+
+.dark .text-white-on-dark {
+    color: rgba(200,200,200,.8);
+}
+.dark .sb-page-header-title span {
+  color: #CCC;
+}
+
+.dark .login-cols h5 span {
+    font-size: 1.75rem;
+    border-bottom: .125rem solid rgba(150,150,150,.5);
+    padding-bottom: .3125rem;
+    color: #CCC;
+}
+
+.dark .login-cols p {
+    color: rgba(200,200,200,.8);
+}
+
+.dark .login-cols .form-control {
+    background: transparent !important;
+    color: #FFF !important;
+}
+
+.dark .login-cols .form-control::placeholder {
+  color: #656565;
+}
+
+.dark #sidenavAccordion,
+.dark .navbar-brand  {
+  background: rgba(0,0,0,.3) !important;
+}
+
+.dark #layoutSidenav_nav {
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    background-attachment: fixed;
+}
+.dark .sb-sidenav {
+  background: rgba(0,0,0,.125);
+}
+
+.dark #layoutSidenav_content {
+  background: none;
+}
+
+.dark .sb-btn-icon {
+  color: #A0A0A0 !important;
+}
+
+.dark .sb-btn-icon:hover {
+  color: #FFF !important;
+  transition: all .2s ease-in-out;
+}
+
+.dark .card {
+  background: rgba(0,0,0,.2);
+  color: #FFF;
+}
+
+.dark .card .welcome-message *[style] {
+  color: #FFF !important;
+}
+
+.dark .card-title{
+  color: #FFF;
+}
+
+.dark .table.table-bordered,
+.dark .table td,
+.dark .table th,
+.dark .table thead th {
+  border-color: rgba(255,255,255,.2);
+  color: rgba(255,255,255,.5);
+}
+
+.dark .tips-container,
+.dark .bg-gray-custom {
+  background: rgba(0,0,0,.1) !important;
+}
+
+.dark .tips-container > * {
+  color: rgba(225, 225, 225, 0.5) !important;
+}
+
+.dark .modal-content {
+  background: #0f2027;
+}
+
+.dark .modal-header,
+.dark .modal-header h3 {
+  color: #FFF;
+}
+
+/* form control */
+.dark .form-control,
+.dark .form-control[readonly],
+.dark .select2-container--default .select2-selection--single,
+.dark .select2-container--classic .select2-selection--single,
+.dark .select2-container--classic .select2-selection--multiple {
+    color: rgba(255,255,255,.85) !important;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+    background-color: transparent !important;
+    font-size: 0.88rem;
+    background-image: none;
+}
+
+.dark select option {
+    color: #373c45;
+}
+
+.dark .select2-container--default .select2-selection--single .select2-selection__rendered,
+.dark .select2-container--classic .select2-selection--single .select2-selection__rendered {
+  color: rgba(255,255,255,.85);
+}
+
+.dark .select2-container--classic .select2-selection--single .select2-selection__arrow {
+  border-left: none;
+  background: none;
+}
+
+.dark .select2-search__field {
+  background: none;
+}
+
+.dark .select2-container--classic .select2-selection--multiple .select2-selection__choice {
+  color: #000;
+}
+/* form control */
+
+/* button */
+.dark .btn {
+  background: none;
+}
+
+.dark .btn:disabled,
+.dark .btn[disabled],
+.dark .btn[disabled]:hover,
+.dark .btn:disabled:hover {
+  border-color: #CCC;
+  color: #CCC;
+  background: none !important;
+}
+
+.dark .btn-outline-dark {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.dark .bg-gray {
+    color: #373c45;
+}
+
+/* button */
+
+.dark .iti__country-list {
+    color: #373c45;
+}
+
+.dark .announcement-item p,
+.dark .announcement-item span {
+  color: #FFF !important;
+}

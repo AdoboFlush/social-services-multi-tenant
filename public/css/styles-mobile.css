@@ -1,0 +1,51 @@
+@media (max-width: 1199px) {
+    .lg-modal.modal-dialog{
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .alert {
+        margin-bottom: 0;
+        padding: 0.5rem;
+    }
+    .sb-page-header-content {
+        padding: 0.5rem;
+    }
+    .container-fluid{
+        padding: 0;
+    }
+
+    .sb-page-header-title > * {
+        font-size: 70%;
+    }
+
+    .dataTables_wrapper {
+        display: none !important;
+    }
+
+    .card > * {
+        font-size: 70%;
+    }
+    .modal {
+        padding: 0 !important;
+    }
+    .modal-dialog,
+    .modal-content {
+        display: table;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .custom-btn-block {
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .sb-topnav .navbar-brand img {
+        max-height: 30px;
+    }
+}
