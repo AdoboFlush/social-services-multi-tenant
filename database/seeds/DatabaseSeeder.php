@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
             WelcomeMessageSeeder::class,
             AdditionalPermissionSeeder::class,
             TenantTagSeeder::class,
-            TagAdditionalSeeder::class,
 		]);
     }
 }

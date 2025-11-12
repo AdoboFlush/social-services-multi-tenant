@@ -154,11 +154,11 @@
   </div>
 
   <div class="wrapper">
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-dark">
       <div class="container-fluid">
         <a href="#" class="navbar-brand">
           <span class="brand-text font-weight-dark">
-            <img src="{{ asset('images/juan-connect-logo.png') }}" alt="JC Logo" style="height:auto; width: 170px;">
+            <img src="{{ asset('images/juan-connect-logo-black.png') }}" alt="JC Logo" style="height:auto; width: 170px;">
           </span>
         </a>
         <ul class="navbar-nav ml-auto">

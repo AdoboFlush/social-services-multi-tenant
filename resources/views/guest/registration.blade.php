@@ -4,7 +4,7 @@
 
 <div class="login-box">
     <div class="login-logo">
-        <a href="#" class="h1"><img src="{{ asset('images/aksyon_agad_logo_green.png') }}" style="height:70px; width:220px;" /></a>
+        <a href="#" class="h1"><img src="{{ asset('images/juan-connect-logo-black.png') }}" style="height:auto; width:220px;" /></a>
     </div>
 
     <div class="card">
@@ -61,10 +61,10 @@
                     @endif
                 </div>
 
-                <div class="input-group mb-3">
+                <div class="input-group">
                     <input type="hidden" name="member_code" id="member_code" class="form-control" value="{{ isset($_GET['code']) ? $_GET['code'] : '' }}" required />
                     @if ($errors->has('member_code'))
-                    <span class="alert alert-danger invalid-feedback">
+                    <span class="alert alert-danger" style="font-size:12px;">
                         <strong> {{ $errors->first('member_code') }}</strong>
                     </span>
                     @endif

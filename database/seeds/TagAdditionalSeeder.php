@@ -12,6 +12,7 @@ class TagAdditionalSeeder extends Seeder
      */
     public function run()
     {    
+        /*
         // Alliance
         Tag::firstOrCreate(['status'=>1, 'name' => 'ARJO ATAYDE', 'type'=>'alliance', 'custom_field' => '', 'parent_id' => 0]);
         Tag::firstOrCreate(['status'=>1, 'name' => 'BIG FAMILY', 'type'=>'alliance', 'custom_field' => '', 'parent_id' => Tag::where('name', 'ARJO ATAYDE')->where('type', 'alliance')->first()->id]);
@@ -59,6 +60,6 @@ class TagAdditionalSeeder extends Seeder
         Tag::firstOrCreate(['status'=>1, 'name' => 'SOLO PARENT', 'type'=>'sectoral', 'custom_field' => '', 'parent_id' => 0]);
         Tag::firstOrCreate(['status'=>1, 'name' => 'PTA', 'type'=>'sectoral', 'custom_field' => '', 'parent_id' => 0]);
         Tag::firstOrCreate(['status'=>1, 'name' => 'APO', 'type'=>'sectoral', 'custom_field' => '', 'parent_id' => 0]);
-
+        */
     }
 }

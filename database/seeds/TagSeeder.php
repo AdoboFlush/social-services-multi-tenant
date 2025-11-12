@@ -50,53 +50,6 @@ class TagSeeder extends Seeder
         Tag::create(['status'=>1, 'name' => 'FINANCIAL', 'type'=>'purpose', 'custom_field' => '', 'parent_id' => 4]);
         Tag::create(['status'=>1, 'name' => 'FLOWERS', 'type'=>'purpose', 'custom_field' => '', 'parent_id' => 4]);
         
-
-        // Barangay
-        Tag::create(['status'=>1, 'name' => 'RAMON MAGSAYSAY', 'type'=>'brgy', 'custom_field' => 'AREA 1', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'ALICIA', 'type'=>'brgy', 'custom_field' => 'AREA 1', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'STO. CRISTO', 'type'=>'brgy', 'custom_field' => 'AREA 1', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'BAGONG PAG-ASA', 'type'=>'brgy', 'custom_field' => 'AREA 1', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'PROJECT 6', 'type'=>'brgy', 'custom_field' => 'AREA 1', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'VASRA', 'type'=>'brgy', 'custom_field' => 'AREA 1', 'parent_id' => 0]);
-        
-        Tag::create(['status'=>1, 'name' => 'BAHAY TORO', 'type'=>'brgy', 'custom_field' => 'AREA 2', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'KATIPUNAN', 'type'=>'brgy', 'custom_field' => 'AREA 2', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'SAN ANTONIO', 'type'=>'brgy', 'custom_field' => 'AREA 2', 'parent_id' => 0]);
-
-        Tag::create(['status'=>1, 'name' => 'VETERANS VILLAGE', 'type'=>'brgy', 'custom_field' => 'AREA 3', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'BUNGAD', 'type'=>'brgy', 'custom_field' => 'AREA 3', 'parent_id' => 0]);
-
-        Tag::create(['status'=>1, 'name' => 'PHIL-AM', 'type'=>'brgy', 'custom_field' => 'AREA 3', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'WEST TRIANGLE', 'type'=>'brgy', 'custom_field' => 'AREA 3', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'PALTOK', 'type'=>'brgy', 'custom_field' => 'AREA 3', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'NAYONG KANLURAN', 'type'=>'brgy', 'custom_field' => 'AREA 3', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'STA. CRUZ', 'type'=>'brgy', 'custom_field' => 'AREA 3', 'parent_id' => 0]);
-
-        Tag::create(['status'=>1, 'name' => 'MASAMBONG', 'type'=>'brgy', 'custom_field' => 'AREA 4', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'DEL MONTE', 'type'=>'brgy', 'custom_field' => 'AREA 4', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'DAMAYAN', 'type'=>'brgy', 'custom_field' => 'AREA 4', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'PARAISO', 'type'=>'brgy', 'custom_field' => 'AREA 4', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'TALAYAN', 'type'=>'brgy', 'custom_field' => 'AREA 4', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'MARIBLO', 'type'=>'brgy', 'custom_field' => 'AREA 4', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'STO. DOMINGO', 'type'=>'brgy', 'custom_field' => 'AREA 4', 'parent_id' => 0]);
-        
-
-        Tag::create(['status'=>1, 'name' => 'BALINGASA', 'type'=>'brgy', 'custom_field' => 'AREA 5', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'PAG-IBIG SA NAYON', 'type'=>'brgy', 'custom_field' => 'AREA 5', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'DAMAR', 'type'=>'brgy', 'custom_field' => 'AREA 5', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'SAN JOSE', 'type'=>'brgy', 'custom_field' => 'AREA 5', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'MANRESA', 'type'=>'brgy', 'custom_field' => 'AREA 5', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'ST. PETER', 'type'=>'brgy', 'custom_field' => 'AREA 5', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'SIENA', 'type'=>'brgy', 'custom_field' => 'AREA 5', 'parent_id' => 0]);
-
-        Tag::create(['status'=>1, 'name' => 'LOURDES', 'type'=>'brgy', 'custom_field' => 'AREA 6', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'STA. TERESITA', 'type'=>'brgy', 'custom_field' => 'AREA 6', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'SAN ISIDRO LABRADOR', 'type'=>'brgy', 'custom_field' => 'AREA 6', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'SALVACION', 'type'=>'brgy', 'custom_field' => 'AREA 6', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'PAANG BUNDOK', 'type'=>'brgy', 'custom_field' => 'AREA 6', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'N.S. AMORANTO', 'type'=>'brgy', 'custom_field' => 'AREA 6', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'MAHARLIKA', 'type'=>'brgy', 'custom_field' => 'AREA 6', 'parent_id' => 0]);
-
         // Civil Status
         Tag::create(['status'=>1, 'name' => 'SINGLE', 'type'=>'civil_status', 'custom_field' => '', 'parent_id' => 0]);
         Tag::create(['status'=>1, 'name' => 'MARRIED', 'type'=>'civil_status', 'custom_field' => '', 'parent_id' => 0]);
@@ -112,8 +65,8 @@ class TagSeeder extends Seeder
         Tag::create(['status'=>1, 'name' => 'BORN AGAIN CHRISTIAN', 'type'=>'religion', 'custom_field' => '', 'parent_id' => 0]);
 
         // Alliance
-        Tag::create(['status'=>1, 'name' => 'ATAYDE', 'type'=>'alliance', 'custom_field' => '', 'parent_id' => 0]);
-        Tag::create(['status'=>1, 'name' => 'CRISOLOGO', 'type'=>'alliance', 'custom_field' => '', 'parent_id' => 0]);
+        // Tag::create(['status'=>1, 'name' => 'ATAYDE', 'type'=>'alliance', 'custom_field' => '', 'parent_id' => 0]);
+        // Tag::create(['status'=>1, 'name' => 'CRISOLOGO', 'type'=>'alliance', 'custom_field' => '', 'parent_id' => 0]);
 
         // Beneficiaries
         Tag::create(['status'=>1, 'name' => 'DSWD', 'type'=>'beneficiaries', 'custom_field' => '', 'parent_id' => 0]);

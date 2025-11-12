@@ -4,7 +4,7 @@
 
 <div class="login-box">
     <div class="login-logo">
-        <a href="#" class="h1"><img src="{{ asset('images/aksyon_agad_logo_green.png') }}" style="height:70px; width:220px;" /></a>
+        <a href="#" class="h1"><img src="{{ asset('images/juan-connect-logo-black.png') }}" style="height:auto; width:220px;" /></a>
     </div>
 
     <div class="card">

@@ -77,8 +77,6 @@
     </script>
     @yield('js-script')
 
-    @yield('js-script')
-
     <script type="text/javascript">
     //Show Success Message
     @if(Session::has('success'))

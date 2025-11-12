@@ -9,7 +9,7 @@ Route::macro("domain", function(array $domains, \Closure $definition) {
 });
 
 Route::domain([
-    env("GUEST_URL"), 
+    //env("GUEST_URL"), 
     env("DB1_GUEST_URL"), 
     env("DB2_GUEST_URL"), 
     env("DB3_GUEST_URL")], 
@@ -18,9 +18,9 @@ function () {
 });
 
 Route::domain([
-    env("APP_URL"), 
-    env("TAGGER_URL"), 
-    env("PAYMASTER_URL"), 
+    // env("APP_URL"), 
+    // env("TAGGER_URL"), 
+    // env("PAYMASTER_URL"), 
     env("DB1_APP_URL"), 
     env("DB2_APP_URL"), 
     env("DB3_APP_URL"), 
