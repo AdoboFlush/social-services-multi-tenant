@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\URL;
 
 class TenantResolver
 {
@@ -36,6 +37,10 @@ class TenantResolver
         } else {
             Cache::put('tenant_id', "default");
         }
+
+        // Set the default host for route() and url() helpers globally
+        // This ensures all route() calls use the current tenant domain
+        URL::defaults(['host' => $host]);
 
         return $next($request);
     }
