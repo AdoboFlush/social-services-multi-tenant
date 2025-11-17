@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg"><strong>Member Information</strong></p>
-            <form autocomplete="off" class="validate" action="{{ route('guest.register') }}" method="post">
+            <form autocomplete="off" class="validate" action="{{ route('guest.register', [], false) }}" method="post">
                 @csrf
 
                 <div class="alert alert-warning">

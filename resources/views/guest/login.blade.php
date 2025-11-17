@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
-            <form method="POST" autocomplete="off" class="form-signin validate" action="{{ route('guest.login') }}">
+            <form method="POST" autocomplete="off" class="form-signin validate" action="{{ route('guest.login', [], false) }}">
                 @csrf
 
                 <div class="input-group mb-3">
@@ -43,7 +43,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <p>If not yet registered, click <a href="{{ route("guest.landing")}}">Register</a>.</p>
+                        <p>If not yet registered, click <a href="{{ route('guest.landing', [], false) }}">Register</a>.</p>
                     </div>
                 </div>
 

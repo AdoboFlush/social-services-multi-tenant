@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-            <form method="POST" autocomplete="off" action="{{ route('guest.profile.update') }}">
+            <form method="POST" autocomplete="off" action="{{ route('guest.profile.update', [], false) }}">
                 @csrf
                 <input type="hidden" name="id_request_id" id="id_request_id" value="{{ $id_request->id }}" />
                 <input type="hidden" name="name_on_id" id="name_on_id" value="{{ $id_request->name_on_id }}" />

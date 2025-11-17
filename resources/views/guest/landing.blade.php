@@ -10,8 +10,8 @@
     <div class="card">
         <div class="card-body login-card-body">
             <p><strong>Please enter your member code:</strong></p>
-            <p>If you are registered already, click <a href="{{ route("guest.login")}}">Login</a>.</p>
-            <form autocomplete="off" class="form-signin validate" action="{{ route('check.code') }}" method="post">
+            <p>If you are registered already, click <a href="{{ route("guest.login", [], false)}}">Login</a>.</p>
+            <form autocomplete="off" class="form-signin validate" action="{{ route('check.code', [], false) }}" method="post">
 
                 @csrf
 

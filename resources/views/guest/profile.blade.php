@@ -9,7 +9,7 @@
                     <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text"><strong>You are invited!</strong></span>
-                        <a href="#" class="ajax-modal text-sm" data-title="{{ _lang('Events')}}" data-href="{{ route('guest.profile.event') }}" >
+                        <a href="#" class="ajax-modal text-sm" data-title="{{ _lang('Events')}}" data-href="{{ route('guest.profile.event', [], false) }}" >
                             <i class="fa fa-plus-circle"></i> More info
                         </a>
                     </div>
@@ -21,7 +21,7 @@
                     <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text"><strong>You are invited!</strong></span>
-                        <a href="#" class="ajax-modal text-sm" data-title="{{ _lang('Events')}}" data-href="{{ route('guest.profile.event') }}" >
+                        <a href="#" class="ajax-modal text-sm" data-title="{{ _lang('Events')}}" data-href="{{ route('guest.profile.event', [], false) }}" >
                             <i class="fa fa-plus-circle"></i> More info
                         </a>
                     </div>
@@ -60,14 +60,14 @@
             </div>
             @if(isset($id_request))
             <div class="col-md-12">
-                <a class="btn btn-block btn-success btn-sm ajax-modal" href="#" data-title="{{ _lang('Member ID') }}" data-href="{{ route('guest.profile.id', $id_request->id) }}">Show Member ID</a>
+                <a class="btn btn-block btn-success btn-sm ajax-modal" href="#" data-title="{{ _lang('Member ID') }}" data-href="{{ route('guest.profile.id', $id_request->id, false) }}">Show Member ID</a>
                 @if($template->allowed_user_update)
-                <a class="btn btn-block btn-primary btn-sm" href="{{ route('guest.profile.edit') }}">Update ID</a>
+                <a class="btn btn-block btn-primary btn-sm" href="{{ route('guest.profile.edit', [], false) }}">Update ID</a>
                 @endif
             </div>
             @else
             <div class="alert alert-warning col-md-12 text-center mt-2">
-                No Member ID created yet. Create your member ID by clicking <a href="{{route('guest.profile.create')}}"><strong> here </strong></a>
+                No Member ID created yet. Create your member ID by clicking <a href="{{route('guest.profile.create', [], false)}}"><strong> here </strong></a>
             </div>
             @endif
 
@@ -79,7 +79,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <a class="btn btn-block btn-info btn-sm ajax-modal mt-2" href="#" data-title="{{ _lang('Assistance History')}}" data-href="{{ route('guest.profile.assistance') }}">Show Assistance History</a>
+                <a class="btn btn-block btn-info btn-sm ajax-modal mt-2" href="#" data-title="{{ _lang('Assistance History')}}" data-href="{{ route('guest.profile.assistance', [], false) }}">Show Assistance History</a>
             </div>
 
             <hr></hr>
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <a class="btn btn-block btn-info btn-sm ajax-modal mt-2" href="#" data-title="{{ _lang('Event History')}}" data-href="{{ route('guest.profile.event') }}">Show Event History</a>
+                <a class="btn btn-block btn-info btn-sm ajax-modal mt-2" href="#" data-title="{{ _lang('Event History')}}" data-href="{{ route('guest.profile.event', [], false) }}">Show Event History</a>
             </div>
         </div>
     </div>
