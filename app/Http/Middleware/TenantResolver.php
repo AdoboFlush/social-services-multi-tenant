@@ -34,7 +34,7 @@ class TenantResolver
             Cache::put('tenant_id', $tenant['tenant_id']);
 
         } else {
-            Cache::put('tenant_id', "default");
+            Cache::put('tenant_id', 0);
         }
 
         return $next($request);
