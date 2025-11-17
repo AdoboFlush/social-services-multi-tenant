@@ -38,9 +38,15 @@ class TenantResolver
             Cache::put('tenant_id', "default");
         }
 
-        // Set the default host for route() and url() helpers globally
+        // Set the default host and scheme for route() and url() helpers globally
         // This ensures all route() calls use the current tenant domain
-        URL::defaults(['host' => $host]);
+        $scheme = $request->getScheme();
+        URL::defaults([
+            'scheme' => $scheme,
+            'host' => $host
+        ]);
+
+        Log::info("URL defaults set - scheme: {$scheme}, host: {$host}");
 
         return $next($request);
     }
