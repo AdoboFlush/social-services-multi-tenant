@@ -21,7 +21,7 @@
 					<h4 class="card-title">
 						<span class="panel-title">{{ _lang('Languages') }}</span>
                         @can('language_create')
-						<a class="btn btn-primary btn-sm float-right" href="{{ route('languages.create') }}">{{ _lang('Add New') }}</a>
+						<a class="btn btn-primary btn-sm float-right" href="{{ route('languages.create', [], false) }}">{{ _lang('Add New') }}</a>
                         @endcan
 					</h4>
 				 

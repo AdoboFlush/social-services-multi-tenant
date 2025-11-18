@@ -17,7 +17,7 @@
                         <h4 class="card-title"><span class="panel-title">{{ _lang('Advertisements List') }}</span></h4>
                         <div class="row mb-4">
                             <div class="col-12">
-                                <a href="{{ route('advertisements.create') }}"
+                                <a href="{{ route('advertisements.create', [], false) }}"
                                     class="btn btn-outline-info px-3 mr-2">{{ _lang('Create') }}</a>
                             </div>
                         </div>

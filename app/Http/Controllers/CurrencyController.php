@@ -148,7 +148,7 @@ class CurrencyController extends Controller
 	
 		
 		if(! $request->ajax()){
-           return redirect()->route('currency.index')->with('success', _lang('Updated Successfully'));
+           return redirect()->route('currency.index', [], false)->with('success', _lang('Updated Successfully'));
         }else{
 		   return response()->json(['result'=>'success','action'=>'update', 'message'=>_lang('Updated Successfully'),'data'=>$currency]);
 		}

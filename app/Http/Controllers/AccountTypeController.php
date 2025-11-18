@@ -68,7 +68,7 @@ class AccountTypeController extends Controller
 			if($request->ajax()){ 
 			    return response()->json(['result'=>'error','message'=>$validator->errors()->all()]);
 			}else{
-				return redirect()->route('account_types.create')
+				return redirect()->route('account_types.create', [], false)
 							->withErrors($validator)
 							->withInput();
 			}			
@@ -95,7 +95,7 @@ class AccountTypeController extends Controller
         $accounttype->auto_create = $request->input('auto_create') == 1 ? _lang('Yes') : _lang('No');
         
 		if(! $request->ajax()){
-           return redirect()->route('account_types.create')->with('success', _lang('Saved Successfully'));
+           return redirect()->route('account_types.create', [], false)->with('success', _lang('Saved Successfully'));
         }else{
 		   return response()->json(['result'=>'success','action'=>'store','message'=>_lang('Saved Successfully'),'data'=>$accounttype]);
 		}
@@ -188,7 +188,7 @@ class AccountTypeController extends Controller
         $accounttype->auto_create = $request->input('auto_create') == 1 ? _lang('Yes') : _lang('No');
 		
 		if(! $request->ajax()){
-           return redirect()->route('account_types.index')->with('success', _lang('Updated Successfully'));
+           return redirect()->route('account_types.index', [], false)->with('success', _lang('Updated Successfully'));
         }else{
 		   return response()->json(['result'=>'success','action'=>'update', 'message'=>_lang('Updated Successfully'),'data'=>$accounttype]);
 		}

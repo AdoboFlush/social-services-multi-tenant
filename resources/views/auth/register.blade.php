@@ -9,7 +9,7 @@
     <div class="card-body">
     <p class="login-box-msg">{{ _lang('Create Your Account Now') }}</p>
 
-    <form method="POST" class="form-signin" autocomplete="off" action="{{ route('register') }}" id="registration-form">
+    <form method="POST" class="form-signin" autocomplete="off" action="{{ route('register', [], false) }}" id="registration-form">
         @csrf
         <input type="hidden" name="language" value="{{ $language }}">
 

@@ -308,7 +308,7 @@
 
                 <!--Reply Box-->
 
-                <form action="{{ route('messages.reply_message') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('messages.reply_message', [], false) }}" method="post" enctype="multipart/form-data">
 
                     {{ csrf_field() }}
 

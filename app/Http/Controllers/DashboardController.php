@@ -104,7 +104,7 @@ class DashboardController extends Controller
             return view('backend.dashboard-admin',compact(['data']));
 
         } elseif ( Auth::user()->user_type == User::TAGGER ){
-            return redirect(route('voter.tagging.view'));
+            return redirect(route('voter.tagging.view', [], false));
         } else {
             return view('backend.user_panel.dashboard-user',[]);
        }

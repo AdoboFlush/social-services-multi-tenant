@@ -71,8 +71,8 @@
                     @auth
                         <a href="{{ url('/dashboard') }}">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('login', [], false) }}">Login</a>
+                        <a href="{{ route('register', [], false) }}">Register</a>
                     @endauth
                 </div>
             @endif

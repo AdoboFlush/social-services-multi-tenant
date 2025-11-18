@@ -19,7 +19,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title">{{ _lang('Create Account') }}</h4>
-					<form method="post" class="validate" autocomplete="off" action="{{ route('accounts.store') }}" enctype="multipart/form-data">
+					<form method="post" class="validate" autocomplete="off" action="{{ route('accounts.store', [], false) }}" enctype="multipart/form-data">
 						{{ csrf_field() }}
 						<div class="row">
 							<div class="col-lg-12">

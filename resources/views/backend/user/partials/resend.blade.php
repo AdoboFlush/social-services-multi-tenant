@@ -31,7 +31,7 @@
                 'user_id' : "{{ $user->id }}"
                 };
             $.ajax({
-                url: "{{ route('users.resend_verification_email') }}",
+                url: "{{ route('users.resend_verification_email', [], false) }}",
                 method: 'POST',
                 data: data,
                 beforeSend: function(){

@@ -26,7 +26,7 @@
                     class="validate"
                     enctype="multipart/form-data"
                     autocomplete="off"
-                    action="{{ route('advertisements.store') }}"
+					action="{{ route('advertisements.store', [], false) }}"
                 >
 					{{ csrf_field() }}
 				    <div class="row mb-2">

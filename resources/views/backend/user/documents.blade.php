@@ -17,7 +17,7 @@
 		<div class="col-12">
 			<div class="card">
 				<div class="card-body">
-					<form method="post" autocomplete="off" action="{{ route('user.documents') }}">
+					<form method="post" autocomplete="off" action="{{ route('user.documents', [], false) }}">
 						{{ csrf_field() }}
 						<h4 class="card-title"><span class="panel-title">{{ _lang('User Documents') }}</span></h4>
 						<div class="filterContainer filter ml-auto row">
@@ -129,7 +129,7 @@
 						<div class="badge badge-info my-2 loader">
 							<span class="text-light">Loading</span> <div class="spinner-border spinner-border-sm text-light" role="status"></div>
 						</div>
-						<form id="frm_document" method="POST" action="{{ route('user.documents_status') }}">
+						<form id="frm_document" method="POST" action="{{ route('user.documents_status', [], false) }}">
 							{{ csrf_field() }}
 							<input type="hidden" name="update_status">
 							<div id="ajax-table"></div>
@@ -193,7 +193,7 @@
             var acc_num = $("#account_number").val();
             if(acc_num){
                 $.ajax({
-                    url: '{{ route("users.search") }}',
+					url: '{{ route("users.search", [], false) }}',
                     method: 'POST',
                     data:{
                         "_token": "{{ csrf_token() }}",

@@ -61,7 +61,7 @@
                 <!-- <div class="col-auto">
 					<div class="form-group">
 						<label class="control-label d-block">&nbsp;</label>
-						<button class="btn btn-default ajax-modal" href="#" data-title="{{ _lang('Generate Code') }}" data-href="{{ route('member_codes.create') }}" id="btn-create" type="button">
+                        <button class="btn btn-default ajax-modal" href="#" data-title="{{ _lang('Generate Code') }}" data-href="{{ route('member_codes.create', [], false) }}" id="btn-create" type="button">
 							<i class="fa fa-plus mr-2"></i>{{ _lang('Generate') }}
 						</button>
 					</div>
@@ -157,7 +157,7 @@
                 table.buttons().container().appendTo('#ajax-table_wrapper .col-md-6:eq(0)');
             },
             'ajax': {
-                'url': '{{ route('member_codes') }}',
+                'url': '{{ route('member_codes', [], false) }}',
                 'data': {
                     '_token': '{{ csrf_token() }}'
                 },

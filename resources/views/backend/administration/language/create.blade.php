@@ -18,7 +18,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title panel-title">{{ _lang('Add New Language') }}</h4>
-					<form method="post" class="validate" autocomplete="off" action="{{ route('languages.store') }}">
+					<form method="post" class="validate" autocomplete="off" action="{{ route('languages.store', [], false) }}">
 						{{ csrf_field() }}
 						<div class="row">
 							<div class="col-md-12">

@@ -1,4 +1,4 @@
-<form method="post" class="validate" autocomplete="off" action="{{ route('member_codes.generate') }}"
+<form method="post" class="validate" autocomplete="off" action="{{ route('member_codes.generate', [], false) }}"
     enctype="multipart/form-data">
     <input type="hidden" name="email_notif" value="0">
     <div class="row">

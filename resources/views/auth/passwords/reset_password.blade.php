@@ -25,7 +25,7 @@
                             @endforeach
                         @endif
 
-                        <form method="POST" action="{{ route('password.update') }}">
+                        <form method="POST" action="{{ route('password.update', [], false) }}">
                             @csrf
 
                             <input type="hidden" name="token" value="{{ $token }}">

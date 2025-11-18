@@ -108,7 +108,7 @@
                 var acc_num = $("#account_number").val();
                 if(acc_num){
                     $.ajax({
-                        url: '{{ route("search.affiliate") }}',
+                        url: '{{ route("search.affiliate", [], false) }}',
                         method: 'POST',
                         data:{
                             "_token": "{{ csrf_token() }}",
@@ -182,7 +182,7 @@
 
             function confirm(){
                 $.ajax({
-                    url: '{{ route("create.affiliate") }}',
+                    url: '{{ route("create.affiliate", [], false) }}',
                     method: 'POST',
                     data:{
                         "_token": "{{ csrf_token() }}",

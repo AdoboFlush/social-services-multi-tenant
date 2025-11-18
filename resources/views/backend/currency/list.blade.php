@@ -19,7 +19,7 @@
 				<div class="card-body">
 					<h4 class="card-title"><span class="panel-title">{{ _lang('Currency List') }}</span>
                         @can('currencies_add')
-						<button class="btn btn-primary btn-sm float-right ajax-modal" data-title="{{ _lang('Add Currency') }}" data-href="{{route('currency.create')}}">{{ _lang('Add New') }}</button>
+						<button class="btn btn-primary btn-sm float-right ajax-modal" data-title="{{ _lang('Add Currency') }}" data-href="{{ route('currency.create', [], false) }}">{{ _lang('Add New') }}</button>
 					    @endcan
                     </h4>
 					<table class="table data-table">

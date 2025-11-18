@@ -30,7 +30,7 @@
 			<div class="card">
 				<div class="card-body">
 					<div class="card-title">
-						<a class="btn btn-primary btn-sm float-right" href="{{ route('users.create') }}">{{ _lang('Add New') }}</a>
+						<a class="btn btn-primary btn-sm float-right" href="{{ route('users.create', [], false) }}">{{ _lang('Add New') }}</a>
 					</div>
 					<table class="table data-table">
 						<thead>

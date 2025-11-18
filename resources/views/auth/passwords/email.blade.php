@@ -16,7 +16,7 @@
                     @endif
 
                         <h5 class="card-title text-center">{{ _lang('Reset Password') }}</h5>
-                    <form method="POST" class="form-signin" action="{{ route('password.email') }}" autocomplete="off">
+                    <form method="POST" class="form-signin" action="{{ route('password.email', [], false) }}" autocomplete="off">
                         @csrf
 
                         <div class="form-group row">

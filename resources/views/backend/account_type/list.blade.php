@@ -18,7 +18,7 @@
 			<div class="card no-export">
 				<div class="card-body">
 					<h4 class="card-title"><span class="panel-title">{{ _lang('Account Types') }}</span>
-						<button class="btn btn-primary btn-sm float-right ajax-modal" data-title="{{ _lang('Create Account Type') }}" data-href="{{route('account_types.create')}}">{{ _lang('Add New') }}</button>
+						<button class="btn btn-primary btn-sm float-right ajax-modal" data-title="{{ _lang('Create Account Type') }}" data-href="{{ route('account_types.create', [], false) }}">{{ _lang('Add New') }}</button>
 					</h4>
 					<table class="table table-bordered data-table">
 						<thead>

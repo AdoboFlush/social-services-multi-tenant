@@ -125,7 +125,7 @@ class MemberLoginController extends Controller
 
         $request->session()->invalidate();
 
-        return redirect(route('guest.landing'));
+        return redirect(route('guest.landing', [], false));
     }
 
 
@@ -142,13 +142,13 @@ class MemberLoginController extends Controller
                     ->withCookie("language", $language)
                     ->with('is_dormant', $user->is_dormant);
             }
-            return redirect(route('guest.profile'))
+            return redirect(route('guest.profile', [], false))
                 ->withCookie("language", $language)
                 ->withCookie('confirmed', 0)
                 ->with('is_dormant', $user->is_dormant);
         }
 
-        return redirect()->route('guest.logout');
+        return redirect()->route('guest.logout', [], false);
     }
 
     protected function credentials(Request $request)

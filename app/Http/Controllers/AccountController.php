@@ -86,7 +86,7 @@ class AccountController extends Controller
 			if($request->ajax()){ 
 			    return response()->json(['result'=>'error','message'=>$validator->errors()->all()]);
 			}else{
-				return redirect()->route('accounts.create')
+				return redirect()->route('accounts.create', [], false)
 							->withErrors($validator)
 							->withInput();
 			}			
@@ -147,7 +147,7 @@ class AccountController extends Controller
 
         
 		if(! $request->ajax()){
-           return redirect()->route('accounts.create')->with('success', _lang('Saved Successfully'));
+           return redirect()->route('accounts.create', [], false)->with('success', _lang('Saved Successfully'));
         }else{
 		   return response()->json(['result'=>'success','action'=>'store','message'=>_lang('Saved Successfully'),'data'=>$account]);
 		}
@@ -263,7 +263,7 @@ class AccountController extends Controller
         $account->status = $account->status == 1 ? _lang('Active') : _lang('Blocked');
 		
 		if(! $request->ajax()){
-           return redirect()->route('accounts.index')->with('success', _lang('Updated Successfully'));
+           return redirect()->route('accounts.index', [], false)->with('success', _lang('Updated Successfully'));
         }else{
 		   return response()->json(['result'=>'success','action'=>'update', 'message'=>_lang('Updated Successfully'),'data'=>$account]);
 		}
@@ -321,6 +321,6 @@ class AccountController extends Controller
         }
 
         DB::commit();
-        return redirect()->route('accounts.index')->with('success',_lang('Deleted Successfully'));
+        return redirect()->route('accounts.index', [], false)->with('success',_lang('Deleted Successfully'));
     }
 }

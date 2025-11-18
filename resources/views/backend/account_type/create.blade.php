@@ -20,7 +20,7 @@
 				<div class="card-body">
 					<h4 class="card-title panel-title">{{ _lang('Create Account Type') }}</h4>
 
-					<form method="post" class="validate" autocomplete="off" action="{{ route('account_types.store') }}" enctype="multipart/form-data">
+					<form method="post" class="validate" autocomplete="off" action="{{ route('account_types.store', [], false) }}" enctype="multipart/form-data">
 						{{ csrf_field() }}
 						<div class="row">
 							<div class="col-md-6">

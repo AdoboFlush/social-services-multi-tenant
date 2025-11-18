@@ -1,4 +1,4 @@
-<form method="post" autocomplete="off" action="{{route('currency.store')}}" enctype="multipart/form-data">
+<form method="post" autocomplete="off" action="{{ route('currency.store', [], false) }}" enctype="multipart/form-data">
 
 	{{ csrf_field() }}
 

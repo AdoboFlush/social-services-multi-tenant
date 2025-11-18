@@ -69,7 +69,7 @@ $(function () {
         'orderable': false,
         'searching': false,
         'ajax': {
-            'url':'{{route("assistance-queue.get", false, [])}}',
+            'url':'{{route("assistance-queue.get", [], false)}}',
             'data': function(d) {
                 d.for_report = 1;
                 d.is_active = $('#is-active-filter').val();
