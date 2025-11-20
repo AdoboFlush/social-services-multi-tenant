@@ -228,20 +228,6 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="control-label">{{ _lang('Source') }}</label>
-                                    <select class="form-control" name="source" id="source">
-                                        <option value="{{App\SocialServiceAssistance::SOURCE_ARJO}}">
-                                            {{App\SocialServiceAssistance::SOURCE_ARJO}}
-                                        </option>
-                                        <option value="{{App\SocialServiceAssistance::SOURCE_GAB}}">
-                                            {{App\SocialServiceAssistance::SOURCE_GAB}}
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
                                     <label class="control-label">Event</label>
                                     @if($event)
                                     <input type="hidden" name="event_id" value="{{ $event->id }}" />

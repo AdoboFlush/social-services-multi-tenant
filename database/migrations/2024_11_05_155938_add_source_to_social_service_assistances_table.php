@@ -14,7 +14,7 @@ class AddSourceToSocialServiceAssistancesTable extends Migration
     public function up()
     {
         Schema::table('social_service_assistances', function (Blueprint $table) {
-            $table->string('source')->default("ARJO");
+            $table->string('source')->default("");
         });
 
     }

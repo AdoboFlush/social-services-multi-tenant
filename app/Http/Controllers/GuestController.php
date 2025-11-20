@@ -56,11 +56,11 @@ class GuestController extends Controller
         $code = isset($request->all()['code']) ? $request->all()['code'] : null;
 
         if (!isset($code)) {
-            return redirect(route("guest.landing"));
+            return redirect(route("guest.landing", [], false));
         }
 
         if ($this->memberCodeFacade::isMemberCodeActive($code)) {
-            return redirect(route("guest.login"))->withSuccess(_lang("Member code is already active. You can now login."));
+            return redirect(route("guest.login", [], false))->withSuccess(_lang("Member code is already active. You can now login."));
         }
 
         $code_with_member = $this->memberCodeFacade::getMemberByCode($code);
@@ -80,7 +80,7 @@ class GuestController extends Controller
         $code = $request->member_code;
 
         if ($code && $this->memberCodeFacade::isMemberCodeActive($code)) {
-            return redirect(route("guest.login"))->withSuccess(_lang("Member code is already active. You can now login."));
+            return redirect(route("guest.login", [], false))->withSuccess(_lang("Member code is already active. You can now login."));
         } else {
             return redirect("register?code={$code}")->withSuccess(_lang("Member code exist. You can now register."));
         }
@@ -90,7 +90,7 @@ class GuestController extends Controller
     {
 
         if ($this->userFacade::createMemberUser($request)) {
-            return redirect(route("guest.login"))->withSuccess(_lang("Successful registration."));
+            return redirect(route("guest.login", [], false))->withSuccess(_lang("Successful registration."));
         }
 
         return back()->with('error', _lang("You cannot register at this time. Please report to AA staff."));
@@ -112,7 +112,7 @@ class GuestController extends Controller
 			$compact = compact('member', 'id_request', 'template');
             return view("guest.edit", $compact);
         } else {
-            return redirect('login');
+            return redirect(route('guest.login', [], false));
         }
     }
 
@@ -128,7 +128,7 @@ class GuestController extends Controller
 			$compact = compact('member', 'template');
             return view("guest.create", $compact);
         } else {
-            return redirect('login');
+            return redirect(route('guest.login', [], false));
         }
     }
 
@@ -198,7 +198,7 @@ class GuestController extends Controller
 
             return view("guest.profile", $compact);
         } else {
-            return redirect('login');
+            return redirect(route('guest.login', [], false));
         }
     }
 
@@ -214,7 +214,7 @@ class GuestController extends Controller
             $back_bg = $template['back']['bg'];
             return view('guest.id', compact('data', 'front', 'back', 'front_bg', 'back_bg'));
         } else {
-            return redirect('login');
+            return redirect(route('guest.login', [], false));
         }
     }
 
@@ -240,7 +240,7 @@ class GuestController extends Controller
 
             return view("guest.assistance", $compact);
         } else {
-            return redirect('login');
+            return redirect(route('guest.login', [], false));
         }
     }
 
@@ -267,7 +267,7 @@ class GuestController extends Controller
 
             return view("guest.event", $compact);
         } else {
-            return redirect('login');
+            return redirect(route('guest.login', [], false));
         }
     }
 }

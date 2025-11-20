@@ -90,7 +90,6 @@ class SocialServiceAssistanceService extends BaseService
             $model->requestor_suffix = !empty($request->requestor_suffix) ? $request->requestor_suffix : '';
             $model->requestor_relationship_to_beneficiary = !empty($request->requestor_relationship_to_beneficiary) ? $request->requestor_relationship_to_beneficiary : '';
             $model->encoder_id = Auth::user()->id;
-            $model->source = $request->source;
 
             if ($request->has("birth_date") && !empty($request->birth_date)) {
                 $model->birth_date = $request->birth_date;
@@ -300,7 +299,6 @@ class SocialServiceAssistanceService extends BaseService
             $model->requestor_last_name = $request->requestor_last_name;
             $model->requestor_first_name = $request->requestor_first_name;
             $model->precinct = $request->precinct;
-            $model->source = $request->source;
 
             if ($request->has("birth_date") && !empty($request->birth_date)) {
                 $model->birth_date = $request->birth_date;

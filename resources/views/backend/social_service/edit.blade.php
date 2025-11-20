@@ -285,18 +285,8 @@
                                 </div>
                             </div> 
                             @endcan
-                            
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">{{ _lang('Source') }}</label>
-                                    <select class="form-control" name="source" id="source">
-                                        <option value="{{App\SocialServiceAssistance::SOURCE_ARJO}}" {{ $socialService->source == App\SocialServiceAssistance::SOURCE_ARJO ? 'selected="selected"' : ''}}>{{App\SocialServiceAssistance::SOURCE_ARJO}}</option>
-                                        <option value="{{App\SocialServiceAssistance::SOURCE_GAB}}" {{ $socialService->source == App\SocialServiceAssistance::SOURCE_GAB ? 'selected="selected"' : ''}}>{{App\SocialServiceAssistance::SOURCE_GAB}}</option>
-                                    </select>
-                                </div>
-                            </div>
 
-                             <div class="col-md-4">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="control-label" for="event_id">Event</label>
                                     <select class="form-control" name="event_id" id="event_id" style="width: 100%;">

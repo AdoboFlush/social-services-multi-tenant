@@ -51,23 +51,6 @@ $alert_str .= isset($params['source']) ? ' from source '. $params['source'] : ''
         </div>
     </div>
 
-    <div class="col-md-2">
-        <div class="form-group">
-            <label class="control-label">{{ _lang('Source') }}</label>
-            <select class="form-control" name="filter_source" id="filter_source">
-                <option value="">
-                    ALL
-                </option>
-                <option value="{{App\SocialServiceAssistance::SOURCE_ARJO}}" {{ $filter_source == App\SocialServiceAssistance::SOURCE_ARJO ? 'selected' : '' }}>
-                    {{App\SocialServiceAssistance::SOURCE_ARJO}}
-                </option>
-                <option value="{{App\SocialServiceAssistance::SOURCE_GAB}}" {{ $filter_source == App\SocialServiceAssistance::SOURCE_GAB ? 'selected' : '' }}>
-                    {{App\SocialServiceAssistance::SOURCE_GAB}}
-                </option>
-            </select>
-        </div>
-    </div>
-
     <div class="col-md-1">
         <div class="form-group">
             <label class="control-label">--</label>

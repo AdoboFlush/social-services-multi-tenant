@@ -227,20 +227,6 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="control-label">{{ _lang('Source') }}</label>
-                                    <select class="form-control" name="source" id="source">
-                                        <option value="{{App\SocialServiceAssistance::SOURCE_ARJO}}">
-                                            {{App\SocialServiceAssistance::SOURCE_ARJO}}
-                                        </option>
-                                        <option value="{{App\SocialServiceAssistance::SOURCE_GAB}}">
-                                            {{App\SocialServiceAssistance::SOURCE_GAB}}
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
                                     <label class="control-label">Event</label>
                                     <select id="event_id" name="event_id" class="form-control select2-event" style="width: 100%;" disabled></select>
                                 </div>

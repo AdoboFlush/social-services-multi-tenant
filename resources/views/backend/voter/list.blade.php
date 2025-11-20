@@ -26,7 +26,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">VAIC Voters List</h3>
+                  <h3 class="card-title">PCVL Voters List</h3>
                 <span class="float-right">
                     @can('voter_create')
                     <a href="#" class="btn btn-warning btn-sm ajax-modal" data-title="{{ _lang('Import Voters to Members') }}" data-href="{{url('voters/import_to_members')}}">Import To Members</a>

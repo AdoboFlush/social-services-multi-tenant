@@ -54,9 +54,6 @@ class SocialServiceAssistance extends Model
     public const STATUS_FOR_VALIDATION = "For-validation";
     public const STATUS_RELEASED = "Released";
     public const STATUS_FOR_DELETE = "For-delete";
-
-    public const SOURCE_ARJO = "ARJO";
-    public const SOURCE_GAB = "GAB";
     
     public function encoder()
     {

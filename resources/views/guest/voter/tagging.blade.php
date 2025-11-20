@@ -857,17 +857,10 @@
                         'color': "white"
                     });
                 } else {
-                    if (data.appended_alliance_data == "ATAYDE" || data.appended_alliance_data == "ARJO ATAYDE" || data.appended_alliance_data == "GAB ATAYDE") {
-                        $('td', row).css({
-                            'background-color': '#28a745',
-                            'color': "white"
-                        });
-                    } else if (data.appended_alliance_data == "CRISOLOGO") {
-                        $('td', row).css({
-                            'background-color': '#003d8d',
-                            'color': "white"
-                        });
-                    }
+                    $('td', row).css({
+                        'background-color': '#003d8d',
+                        'color': "white"
+                    });
                 }
             },
             'ajax': {
