@@ -15,7 +15,7 @@ class TenantSeederCommand extends Command
      * The name and signature of the console command.
      */
     protected $signature = 'tenant:seed 
-                            {domain? : The tenant domain to seed (e.g., tenant1.example.com)} 
+                            {tenant_id? : The tenant ID to seed (e.g., 1, 2, 3)} 
                             {--all : Seed all tenant databases}';
 
     /**
@@ -32,31 +32,43 @@ class TenantSeederCommand extends Command
             return;
         }
 
-        $domain = $this->argument('domain');
+        $tenantId = $this->argument('tenant_id');
 
-        if (!$domain) {
-            $this->error('Please provide a domain or use the --all flag.');
+        if (!$tenantId) {
+            $this->error('Please provide a tenant ID or use the --all flag.');
             return;
         }
 
-        if (!isset($tenants[$domain])) {
-            $this->error("Tenant for domain '{$domain}' not found in config/tenants.php.");
+        $tenant = $this->findTenantById($tenants, $tenantId);
+
+        if (!$tenant) {
+            $this->error("Tenant with ID '{$tenantId}' not found in config/tenants.php.");
             return;
         }
 
-        $this->seedTenant($domain, $tenants[$domain]);
+        $this->seedTenant($tenant);
     }
 
     protected function seedAllTenants(array $tenants)
     {
-        foreach ($tenants as $domain => $tenant) {
-            $this->seedTenant($domain, $tenant);
+        foreach ($tenants as $tenant) {
+            $this->seedTenant($tenant);
         }
     }
 
-    protected function seedTenant($domain, $tenant)
+    protected function findTenantById(array $tenants, $tenantId)
     {
-        $this->info("🔄 Seeding tenant: {$domain} ({$tenant['database']})");
+        foreach ($tenants as $tenant) {
+            if ($tenant['tenant_id'] == $tenantId) {
+                return $tenant;
+            }
+        }
+        return null;
+    }
+
+    protected function seedTenant($tenant)
+    {
+        $this->info("🔄 Seeding tenant: ID {$tenant['tenant_id']} ({$tenant['database']})");
 
         // Switch database connection dynamically
         Config::set('database.connections.mysql.database', $tenant['database']);
@@ -81,6 +93,6 @@ class TenantSeederCommand extends Command
             }
         }
 
-        $this->info("✅ Tenant {$domain} seeded successfully.\n");
+        $this->info("✅ Tenant ID {$tenant['tenant_id']} seeded successfully.\n");
     }
 }

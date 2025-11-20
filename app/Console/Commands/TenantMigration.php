@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Artisan;
 class TenantMigration extends Command
 {
     protected $signature = 'tenant:migrate 
-                            {domain? : The tenant domain to migrate} 
+                            {tenant_id? : The tenant ID to migrate (e.g., 1, 2, 3)} 
                             {--all : Run migrations for all tenants}
                             {--seed : Also run tenant:seed after migrating}';
 
@@ -21,30 +21,42 @@ class TenantMigration extends Command
         $tenants = config('tenants');
 
         if ($this->option('all')) {
-            foreach ($tenants as $domain => $tenant) {
-                $this->migrateTenant($domain, $tenant);
+            foreach ($tenants as $tenant) {
+                $this->migrateTenant($tenant);
             }
             return;
         }
 
-        $domain = $this->argument('domain');
+        $tenantId = $this->argument('tenant_id');
 
-        if (!$domain) {
-            $this->error('Please specify a domain or use the --all flag.');
+        if (!$tenantId) {
+            $this->error('Please specify a tenant ID or use the --all flag.');
             return;
         }
 
-        if (!isset($tenants[$domain])) {
-            $this->error("Tenant '{$domain}' not found in config/tenants.php.");
+        $tenant = $this->findTenantById($tenants, $tenantId);
+
+        if (!$tenant) {
+            $this->error("Tenant with ID '{$tenantId}' not found in config/tenants.php.");
             return;
         }
 
-        $this->migrateTenant($domain, $tenants[$domain]);
+        $this->migrateTenant($tenant);
     }
 
-    protected function migrateTenant($domain, $tenant)
+    protected function findTenantById(array $tenants, $tenantId)
     {
-        $this->info("🚀 Migrating tenant: {$domain} ({$tenant['database']})");
+        foreach ($tenants as $tenant) {
+            if ($tenant['tenant_id'] == $tenantId) {
+                return $tenant;
+            }
+        }
+        return null;
+    }
+
+    protected function migrateTenant($tenant)
+    {
+        $this->info("🚀 Migrating tenant: ID {$tenant['tenant_id']} ({$tenant['database']})");
 
         // Switch DB connection dynamically
         Config::set('database.connections.mysql.database', $tenant['database']);
@@ -71,9 +83,9 @@ class TenantMigration extends Command
         $this->info(Artisan::output());
 
         if ($this->option('seed')) {
-            $this->call('tenant:seed', ['domain' => $domain]);
+            $this->call('tenant:seed', ['tenant_id' => $tenant['tenant_id']]);
         }
 
-        $this->info("✅ Tenant {$domain} migrated successfully.\n");
+        $this->info("✅ Tenant ID {$tenant['tenant_id']} migrated successfully.\n");
     }
 }

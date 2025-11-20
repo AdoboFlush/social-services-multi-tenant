@@ -51,6 +51,7 @@ class Voter extends Model
         'party_list_1',
         'position',
         'beneficiary',
+        'is_former_voter',
     ];
 
     /**

@@ -17,25 +17,38 @@ class TenantResolver
 
         Log::info("Resolving tenant for host: " . $host);
 
-        if (isset($tenants[$host])) {
-            $tenant = $tenants[$host];
+        $tenant_children = [];
+        $tenant_details = null;
 
-            Log::info("DB creds found for tenant: " . $tenant['tenant_id']);
+        // Search through tenants to find one that has this host in its domains
+        foreach ($tenants as $tenant) {
+            if (isset($tenant['domains']) && in_array($host, $tenant['domains'])) {
+                Log::info("Tenant found for host {$host}: " . $tenant['tenant_id']);
 
-            // Override the default connection settings
-            Config::set('database.connections.mysql.database', $tenant['database']);
-            Config::set('database.connections.mysql.username', $tenant['username']);
-            Config::set('database.connections.mysql.password', $tenant['password']);
+                // Override the default connection settings
+                Config::set('database.connections.mysql.database', $tenant['database']);
+                Config::set('database.connections.mysql.username', $tenant['username']);
+                Config::set('database.connections.mysql.password', $tenant['password']);
 
-            // Reconnect to apply changes
-            DB::purge('mysql');
-            DB::reconnect('mysql');
-
-            Cache::put('tenant_id', $tenant['tenant_id']);
-
-        } else {
-            Cache::put('tenant_id', 0);
+                // Reconnect to apply changes
+                DB::purge('mysql');
+                DB::reconnect('mysql');
+                
+                $tenant_details = $tenant;
+                $tenant_children = array_filter($tenants, function ($t) use ($tenant) {
+                    return $t['parent_id'] === $tenant['tenant_id'];
+                });
+                
+                break;
+            }
         }
+
+        if (!$tenant_details) {
+            Log::warning("No tenant found for host: " . $host);
+        }
+
+        Cache::put('tenant_details', $tenant_details);
+        Cache::put('tenant_children', $tenant_children);
 
         return $next($request);
     }
