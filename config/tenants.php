@@ -9,7 +9,7 @@ return [
         "username" => env("DB1_USERNAME", "root"),
         "password" => env("DB1_PASSWORD", ""),
         "name" => env("DB1_NAME", ""),
-        "role" => env("DB1_ROLE", "landlord"),
+        "role" => env("DB1_ROLE", ""),
         "parent_id" => env("DB1_PARENT_ID", 0),
         "description" => env("DB1_DESCRIPTION", ""),
         "domains" => [
