@@ -102,6 +102,9 @@ class User extends Authenticatable implements MustVerifyEmail, JWTSubject
     public const PAYMASTER = 'paymaster';
     public const WATCHER = 'watcher';
     public const RECEIVE_NEWSLETTER_UPDATES = 1;
+    
+    public const T_USER_ROLE_LANDLORD = "landlord";
+    public const T_USER_ROLE_TENANT = "tenant";
 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.

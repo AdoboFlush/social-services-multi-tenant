@@ -167,7 +167,7 @@
               <span class="navbar-toggler-icon"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-              <a href="{{route('guest.profile')}}" class="dropdown-item">
+              <a href="{{route('guest.profile', [], false)}}" class="dropdown-item">
                 <i class="fa fa-user mr-2"></i> Profile
               </a>
               <div class="dropdown-divider"></div>

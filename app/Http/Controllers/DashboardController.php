@@ -13,6 +13,7 @@ use App\SocialServiceAssistance;
 use App\User;
 use App\WelcomeMessage;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
 class DashboardController extends Controller
@@ -46,6 +47,16 @@ class DashboardController extends Controller
     {
 
         if ( Auth::user()->user_type == User::ADMIN){
+
+            $tenant = $request->attributes->get('tenant_details');
+            if($tenant && isset($tenant['role'])) {
+                $current_tenant_context = session('current_tenant_context');
+                $current_tenant_id = $current_tenant_context['tenant_id'] ?? null;
+
+                if($tenant['role'] == User::T_USER_ROLE_LANDLORD && $current_tenant_id == $tenant['tenant_id']) {
+                    return view('backend.dashboard-landlord', compact(['tenant']));
+                }
+            }
 
             $source = $request->has("source") ? $request->source : "";
             $brgy = VoterFacade::getVoterDemographics('brgy');

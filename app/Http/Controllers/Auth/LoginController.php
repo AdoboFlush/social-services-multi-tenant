@@ -79,7 +79,14 @@ class LoginController extends Controller
         }
 
         if ($user->is_admin) {
-            return redirect(route("admin.dashboard", [], false));
+            $admin_route = route("admin.dashboard", [], false);
+            $tenant = $request->attributes->get('tenant_details');
+            if($tenant && isset($tenant['role'])) {
+                if($tenant['role'] == User::T_USER_ROLE_LANDLORD) {
+                   $admin_route .= '?current_tenant_context_id=' . $tenant['tenant_id'];
+                }
+            }
+            return redirect($admin_route);
         } else {
             $language = Auth::user()->user_information->language;
             $this->userService->updateLastLogin($user);

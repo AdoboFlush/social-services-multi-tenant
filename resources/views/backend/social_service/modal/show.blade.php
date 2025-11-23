@@ -54,7 +54,6 @@
 
             <div class="font-weight-bold mb-3">Other Information</div>
             <table class="table table-sm table-bordered">
-                <tr><td><strong>Source</strong></td><td>{{ !empty($socialService['source']) ? $socialService['source'] : 'N/A' }}</td></tr>
                 <tr><td><strong>Event</strong></td><td>{{ !empty($socialService['event_name']) ? $socialService['event_name'] : 'N/A' }}</td></tr>
             </table>
 

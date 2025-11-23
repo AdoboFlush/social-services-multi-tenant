@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Tag;
+use App\Traits\TenantConnects;
 
 
 class SocialServiceAssistance extends Model
 {
+    use TenantConnects;
     /**
      * The attributes that are mass assignable.
      *

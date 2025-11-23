@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Traits\TenantConnects;
 
 class AssistanceEvent extends Model
 {
+    use TenantConnects;
     protected $fillable = [
         'name',
         'description',

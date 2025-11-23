@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
+use App\Traits\TenantConnects;
 
 class VoterTagDetail extends Model
 {
 
     use SoftDeletes;
+    use TenantConnects;
 
     protected $fillable = [
         'first_name', 

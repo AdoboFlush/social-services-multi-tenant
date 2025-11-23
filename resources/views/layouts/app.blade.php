@@ -257,9 +257,16 @@ if($use_theme == "dark") {
 	</div>
 		@php
 			$user_type = "user";
-			if (Auth::user()->user_type != 'user') {
-				$user_type = "admin";
-			}
+      if (Auth::user()->user_type != 'user') {
+        $user_type = "admin";
+        $tenant = request()->attributes->get('tenant_details');
+        if($tenant && isset($tenant['role'])) {
+            if($tenant['role'] == \App\User::T_USER_ROLE_LANDLORD) {
+                $user_type = "landlord";
+            }
+        }
+      }
+
       $profile_picture = !empty(Auth::user()->profile_picture) ? asset('uploads/profile/'.Auth::user()->profile_picture) : asset('images/juan-connect-favicon.png');
 		@endphp
 		<!--Include Menu-->

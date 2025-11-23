@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Traits\TenantConnects;
 
 class VoterHasAssistance extends Model
 {
+    use TenantConnects;
     protected $fillable = [
         "assistance_event_id",
         "voter_tag_detail_id",
