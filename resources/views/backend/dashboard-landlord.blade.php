@@ -28,7 +28,7 @@ $filter_source = request()->get('source');
 
 <div class="container-fluid">
     <div class="row">
-        @foreach(request()->attributes->get('tenant_children') as $tenant)
+        @foreach($tenants_data as $tenant)
         <div class="col-md-3">
             <div class="card card-widget widget-user">
                 <div class="widget-user-header bg-olive">
@@ -42,19 +42,19 @@ $filter_source = request()->get('source');
                     <div class="row">
                         <div class="col-sm-4 border-right">
                             <div class="description-block">
-                                <h5 class="description-header">3,200</h5>
+                                <h5 class="description-header">{{$tenant['voter_count']}}</h5>
                                 <span class="description-text">Registered Voters</span>
                             </div>
                         </div>
                         <div class="col-sm-4 border-right">
                             <div class="description-block">
-                                <h5 class="description-header">13,000</h5>
+                                <h5 class="description-header">{{$tenant['released_assistance_count']}}</h5>
                                 <span class="description-text">Assistances Released</span>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="description-block">
-                                <h5 class="description-header">35</h5>
+                                <h5 class="description-header">{{$tenant['pending_assistance_count']}}</h5>
                                 <span class="description-text">Pending Assistances</span>
                             </div>
                             <!-- /.description-block -->

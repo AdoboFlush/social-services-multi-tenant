@@ -154,7 +154,7 @@
             <i class="nav-icon fa fa-home"></i>
             <p> Main 
                 @if($currentContext && $currentContext['tenant_id'] == $mainTenant['tenant_id'])
-                <span class="right badge badge-danger">Current</span>
+                <span class="right badge badge-danger">Connected</span>
                 @endif
             </p>
         </a>
@@ -168,7 +168,7 @@
             <p>
                 {{ _lang($tenant['name']) }}
                 @if($currentContext && $currentContext['tenant_id'] == $tenant['tenant_id'])
-                <span class="right badge badge-danger">Current</span>
+                <span class="right badge badge-danger">Connected</span>
                 @endif
             </p>
         </a>

@@ -11,6 +11,7 @@ use App\Services\SocialServiceAssistance\SocialServiceAssistanceFacade;
 use App\Services\Voter\VoterFacade;
 use App\SocialServiceAssistance;
 use App\User;
+use App\Voter;
 use App\WelcomeMessage;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
@@ -54,7 +55,30 @@ class DashboardController extends Controller
                 $current_tenant_id = $current_tenant_context['tenant_id'] ?? null;
 
                 if($tenant['role'] == User::T_USER_ROLE_LANDLORD && $current_tenant_id == $tenant['tenant_id']) {
-                    return view('backend.dashboard-landlord', compact(['tenant']));
+                    $tenants_data = [];
+                    $tenant_children = $request->attributes->get('tenant_children');
+                    foreach($tenant_children as $tenant) {
+                        $pending_assistance_count = $released_assistance_count = $voter_count = 0;
+                        $tenant_context = [
+                            'database' => $tenant['database'],
+                            'username' => $tenant['username'],
+                            'password' => $tenant['password'],
+                        ];
+
+                        $tenant['pending_assistance_count'] = SocialServiceAssistance::onTenantContext($tenant_context)
+                            ->where('status', SocialServiceAssistance::STATUS_PENDING)
+                            ->count();
+
+                        $tenant['released_assistance_count'] = SocialServiceAssistance::onTenantContext($tenant_context)
+                            ->where('status', SocialServiceAssistance::STATUS_RELEASED)
+                            ->count();
+
+                        $tenant['voter_count'] = Voter::onTenantContext($tenant_context)->count();
+                        
+                        $tenants_data[] = $tenant;
+                    }
+
+                    return view('backend.dashboard-landlord', compact(['tenants_data']));
                 }
             }
 
