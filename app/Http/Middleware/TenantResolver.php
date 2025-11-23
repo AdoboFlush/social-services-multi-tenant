@@ -15,12 +15,16 @@ class TenantResolver
         $host = $request->getHost(); // e.g., tenant1.example.com
         $tenants = config('tenants');
 
+        Log::info("Resolving tenant for host: " . $host);
+
         $tenant_children = [];
         $tenant_details = null;
 
         // Search through tenants to find one that has this host in its domains
         foreach ($tenants as $tenant) {
             if (isset($tenant['domains']) && in_array($host, $tenant['domains'])) {
+                Log::info("Tenant found for host {$host}: " . json_encode($tenant));
+
                 // Override the default connection settings
                 Config::set('database.connections.mysql.database', $tenant['database']);
                 Config::set('database.connections.mysql.username', $tenant['username']);
